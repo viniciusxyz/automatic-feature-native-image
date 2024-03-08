@@ -1,8 +1,9 @@
 package automatic.feature.processor;
 
-import automatic.feature.AutomaticFeature;
+import automatic.feature.commons.AutomaticFeature;
 import automatic.feature.exception.FileGenerationException;
 import com.google.auto.service.AutoService;
+import org.graalvm.nativeimage.hosted.Feature;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Processor;
@@ -43,6 +44,13 @@ public class AutomaticFeatureProcessor extends AbstractProcessor {
             return false;
 
         for (Element element : elements) {
+            var interfaces = ((TypeElement) element).getInterfaces().toString();
+
+            if (!interfaces.contains(Feature.class.getName())) {
+                processingEnv.getMessager().printWarning(String.format("Resource not generated for class %s as it does not implement Feature interface", element.asType().toString()));
+                continue;
+            }
+
             var nameClass = element.asType().toString();
             var elementPackage = packageNameAsFilePath(element);
             var listRef = packageNativeFileMap.get(elementPackage);
@@ -85,7 +93,7 @@ public class AutomaticFeatureProcessor extends AbstractProcessor {
 
     private void generateNativeImagePropertiesFile(File fileLocationPath, String fileContent) {
         try {
-            if(!fileLocationPath.exists())
+            if (!fileLocationPath.exists())
                 fileLocationPath.mkdirs();
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileLocation(fileLocationPath)))) {
                 writer.write(fileContent);
