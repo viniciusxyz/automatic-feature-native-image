@@ -12,9 +12,9 @@ The project is made up of a dependency that basically contains the @AutomaticFea
 
 ```xml
 <dependency>
-    <groupId>vvsantos.automatic.feature</groupId>
+    <groupId>io.github.viniciusxyz.automatic.feature</groupId>
     <artifactId>commons</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 </dependency>
 ```
 
@@ -25,9 +25,9 @@ _use [this link as example](https://maven.apache.org/plugins/maven-compiler-plug
 ```xml
 
 <path>
-    <groupId>vvsantos.automatic.feature</groupId>
+    <groupId>io.github.viniciusxyz.automatic.feature</groupId>
     <artifactId>annotation-processor</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 </path>
 ```
 
@@ -36,7 +36,7 @@ _use [this link as example](https://maven.apache.org/plugins/maven-compiler-plug
 ```java
 package test;
 
-import automatic.feature.commons.AutomaticFeature;
+import io.github.viniciusxyz.automatic.feature.commons.AutomaticFeature;
 import org.graalvm.nativeimage.hosted.Feature;
 
 @AutomaticFeature
@@ -53,7 +53,7 @@ By default, the output directory of the native-image.properties file will be tar
 ```java
 package test;
 
-import automatic.feature.commons.AutomaticFeature;
+import io.github.viniciusxyz.automatic.feature.commons.AutomaticFeature;
 import org.graalvm.nativeimage.hosted.Feature;
 
 @AutomaticFeature(generatePackage = "my.annotation.for.native")
@@ -69,4 +69,4 @@ Checklist
 - [ ] Add Javadoc
 - [ ] Publish to Maven Central
 - [ ] Add Sonar 
-- [ ] Add license info
+- [x] Add license info

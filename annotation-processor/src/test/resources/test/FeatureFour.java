@@ -1,6 +1,6 @@
 package test;
 
-import automatic.feature.commons.AutomaticFeature;
+import io.github.viniciusxyz.automatic.feature.commons.AutomaticFeature;
 import org.graalvm.nativeimage.hosted.Feature;
 
 @AutomaticFeature(generatePackage = "my.annotation.for.native")

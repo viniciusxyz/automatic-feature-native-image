@@ -1,7 +1,7 @@
-package automatic.feature.processor;
+package io.github.viniciusxyz.automatic.feature.processor;
 
-import automatic.feature.commons.AutomaticFeature;
-import automatic.feature.exception.FileGenerationException;
+import io.github.viniciusxyz.automatic.feature.commons.AutomaticFeature;
+import io.github.viniciusxyz.automatic.feature.exception.FileGenerationException;
 import com.google.auto.service.AutoService;
 import org.graalvm.nativeimage.hosted.Feature;
 

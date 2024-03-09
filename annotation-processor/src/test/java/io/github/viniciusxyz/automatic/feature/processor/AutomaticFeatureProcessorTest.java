@@ -1,4 +1,4 @@
-package automatic.feature.processor;
+package io.github.viniciusxyz.automatic.feature.processor;
 
 import com.google.testing.compile.Compilation;
 import com.google.testing.compile.JavaFileObjects;

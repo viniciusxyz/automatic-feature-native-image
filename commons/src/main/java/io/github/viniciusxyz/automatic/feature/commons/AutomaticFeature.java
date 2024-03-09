@@ -1,4 +1,4 @@
-package automatic.feature.commons;
+package io.github.viniciusxyz.automatic.feature.commons;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
