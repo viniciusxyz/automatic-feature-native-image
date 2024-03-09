@@ -6,7 +6,7 @@
 
     <groupId>io.github.viniciusxyz.automatic.feature</groupId>
     <artifactId>automatic-feature</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.2</version>
 
     <name>Automatic Feature Processor</name>
     <description>This project aims to facilitate the creation of native-image.properties files for projects that used the graalvm @AutomaticFeature annotation that was deprecated.</description>
@@ -56,6 +56,7 @@
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
+        <central-publishing-maven-plugin.version>0.4.0</central-publishing-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -187,7 +188,7 @@
         <plugin>
             <groupId>org.sonatype.central</groupId>
             <artifactId>central-publishing-maven-plugin</artifactId>
-            <version>0.4.0</version>
+            <version>${central-publishing-maven-plugin.version}</version>
             <extensions>true</extensions>
             <configuration>
                 <publishingServerId>central</publishingServerId>
